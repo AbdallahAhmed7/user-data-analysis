@@ -1,5 +1,12 @@
 # User Data Analysis Project
 
+![Python](https://img.shields.io/badge/Python-Blue?logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?logo=pandas&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?logo=matplotlib&logoColor=white)
+![Seaborn](https://img.shields.io/badge/Seaborn-4C72B0?logo=seaborn&logoColor=white)
+![Requests](https://img.shields.io/badge/Requests-HTTP%20Client-20232A?logo=requests&logoColor=white)
+![JSON](https://img.shields.io/badge/Data-JSON-black?logo=json&logoColor=white)
+
 ## Description
 This project performs **exploratory data analysis (EDA)** on user data fetched from the **DummyJSON API**. It demonstrates the full workflow of **data fetching, cleaning, analysis, and visualization** using Python.
 
