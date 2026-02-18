@@ -23,10 +23,10 @@ while True:
 
 #Convert the users list to dataframe
 df=pd.json_normalize(users_list)
-print(users)
     
 #save the dataframe into users.csv    
 df.to_csv('users.csv', index=False)
+
 
 
     
