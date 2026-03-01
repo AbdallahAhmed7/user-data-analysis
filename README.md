@@ -11,22 +11,24 @@
 A containerized Python project that automates the journey from raw API data to polished visual insights. This pipeline handles data extraction, cleaning, and statistical visualization using a "plug-and-play" Docker environment.
 
 
-
 ---
+## 🏗️ Architecture & Workflow
 
-## 🚀 How the Project Works
+The pipeline follows a classic **ETL (Extract, Transform, Load)** pattern, ensuring that data retrieval is decoupled from the analysis logic.
 
-The project is split into two main phases to ensure a clean separation between data retrieval and data analysis:
+1.  **Extract (`1_Fetching_Data.py`):**
+    * Connects to the **DummyJSON API**.
+    * Implements **pagination logic** (using `limit` and `skip` parameters) to ensure all user records are captured regardless of API defaults.
+    * Saves the raw response into a structured `users.csv`.
 
-1.  **Extraction (`1_Fetching_Data.py`):**  Connects to the **DummyJSON API**.
-    * Fetches user records in batches using pagination logic.
-    * Saves the raw dataset into a structured `users.csv` file.
+2.  **Transform & Analyze (`2_Analysis.py`):**
+    * **Data Cleaning:** Handles missing values, drops redundant fields (like `maidenName`), and flattens nested JSON objects (like addresses) into flat columns.
+    * **Data Normalization:** Ensures numerical consistency for height, weight, and age.
+    * **Statistical Analysis:** Performs aggregations to find trends across demographics.
 
-2.  **Analysis (`2_Analysis.py`):**  Loads the CSV and performs data cleaning (e.g., dropping `maidenName`, flattening address fields).
-    * Executes statistical analysis across various demographics like age, gender, and location.
-
-3.  **Output:**  The script automatically generates **8 data visualizations** including bar charts, histograms, and scatter plots.
-    * Results are saved directly into the `/plots` directory.
+3.  **Visualize (Output):**
+    * Generates **8 high-resolution plots** using Seaborn and Matplotlib.
+    * Automatically exports results to the `/plots` directory as `.png` files.
 
 ---
 
@@ -92,6 +94,7 @@ The pipeline generates the following insights:
 
 
 
+---
 ## 👨‍💻 Author
 
 **Abdallah Ahmed**
